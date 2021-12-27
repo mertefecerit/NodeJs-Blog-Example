@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Tüm Makalelerim</h1>
+            <hr class="border-dark mb-4">
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <% posts.forEach((post, index) => { %>
+                        <div class="col col-lg-3 mb-3"><%- include('./_postCard.ejs',{post, index}) %></div>
+                    <% }) %> 
+                    <div class="col-lg-12">
+                        <%- include('../layout/partials/pagination.ejs', {totalPage: headers['x-wp-totalpages'], currentPage}) %> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<nav class="d-flex justify-content-center">
+    <ul class="pagination">
+      <% for( let index = 1; index <= totalPage; index++ ) { %>
+        <% if(index == 1){ %>
+          <li class="page-item <%= currentPage == 1 ? 'disabled': '' %> "><a class="page-link" href="/blog?page=<%= currentPage!=0 ? parseInt(currentPage)-1 : currentPage %>">Previus</a></li>
+          <% } %>
+        <li class="page-item <%= currentPage == index ? 'active' : '' %> ">
+          <a href="/blog?page=<%=index%>" class="page-link"><%=index%></a>
+        </li>
+        <% if(index == totalPage){ %>
+        <li class="page-item <%= currentPage == totalPage ? 'disabled': '' %> "><a class="page-link" href="/blog?page=<%= currentPage!=totalPage ? parseInt(currentPage)+1 : currentPage %>">Next</a></li>
+        <% } %>
+      <% } %>
+    </ul>
+</nav>
